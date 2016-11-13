@@ -14,8 +14,6 @@ var APP_KEY = process.env.APP_KEY || require('./conf.js').APP_KEY;
 var APP_SECRET = process.env.APP_SECRET || require('./conf.js').APP_SECRET;
 var routes = require('./routes');
 
-alert(APP_KEY);
-
 passport.serializeUser(function(user, done) {
   done(null, user);
 });
