@@ -14,7 +14,7 @@ debug.enabled = true;
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '1300');
+var port = normalizePort(process.env.PORT || '80');
 app.set('port', port);
 
 /**
