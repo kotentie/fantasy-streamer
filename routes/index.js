@@ -58,7 +58,7 @@ exports.getData = function(req, res) {
           form: {
             client_id: process.env.APP_KEY,
             client_secret: process.env.APP_SECRET,
-            redirect_uri: 'oob',
+            redirect_uri: process.env.APP_URL,
             refresh_token: req.user.refreshToken,
             grant_type: 'refresh_token'
           }
