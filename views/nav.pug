@@ -15,7 +15,7 @@ mixin nav
           ul.nav.navbar-nav
               if null == user
                 li
-                  a.btn.login-btn(href="/auth", title="Login with Yahoo") Login with Y!
+                  a.btn.login-btn(href="/auth/yahoo", title="Login with Yahoo") Login with Y!
               else
                 li.dropdown
                   a.user.clearfix.dropdown-toggle(href='#', data-toggle='dropdown')

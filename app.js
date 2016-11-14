@@ -10,8 +10,8 @@ var passport = require('passport');
 var request = require('request');
 var OAuth2Strategy = require('passport-oauth2');
 var YahooFantasy = require('yahoo-fantasy');
-var APP_KEY = process.env.APP_KEY;
-var APP_SECRET = process.env.APP_SECRET;
+var APP_KEY = process.env.APP_KEY || require('./conf.js').APP_KEY;
+var APP_SECRET = process.env.APP_SECRET || require('./conf.js').APP_SECRET;
 var routes = require('./routes');
 
 passport.serializeUser(function(user, done) {
@@ -28,7 +28,7 @@ passport.use(
     tokenURL: 'https://api.login.yahoo.com/oauth2/get_token',
     clientID: APP_KEY,
     clientSecret: APP_SECRET,
-    callbackURL: (process.env.APP_URL) 
+    callbackURL: (process.env.APP_URL || require('./conf.js').APP_URL) + '/auth/yahoo/callback'
   }, function(accessToken, refreshToken, params, profile, done) {
     
     var options = {
