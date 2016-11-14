@@ -28,7 +28,7 @@ passport.use(
     tokenURL: 'https://api.login.yahoo.com/oauth2/get_token',
     clientID: APP_KEY,
     clientSecret: APP_SECRET,
-    callbackURL: APP_URL
+    callbackURL: (require('./conf.js').APP_URL) + ''
   }, function(accessToken, refreshToken, params, profile, done) {
     
     var options = {
